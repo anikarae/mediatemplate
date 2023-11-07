@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Media Template (my music taste)</title>
+<meta charaset = "UTF-8"/>
+<meta name=:description" content="Adding multimedia to show my music taste.">
+<link href="styles.css" rel="stylesheet" type="text/css">
+</head>
+
+<body>
+<div class="pagebox">
+<header>
+<h1>MY MUSIC TASTE</h1>
+</header>
+
+<nav>
+<div class="topnav">
+<a class="current" href="index.html">Home</a>
+<a href="#">Content</a>
+<a href="#">About Me</a>
+</div>
+</nav>
+
+<article>
+
+<section>
+<h2>Rihanna</h2>
+<p>
+<img class="smallpic" src="images/rihanna.jpeg" alt="Picture of Rihanna's album cover of good girl gone bad.">
+Breakin' Dishes By Rihanna</p>
+<hr/>
+</section>
+
+<section>
+<h2>The Weeknd</h2>
+<img class="bigpic" src="images/popular.jpeg" alt="Picture of the Weeknd's album cover for the idol.">
+<p>Popular By The Weeknd, Playboi Carti, and Madonna.</p>
+<hr/>
+</section>
+
+<section>
+<h2>Sound</h2>
+<audio controls>
+<source src="audio/glamorous.m4a" type="audio/mpeg">
+Your browser does not support the audio element.
+</audio>
+<p>Glamorous By Fergie and Ludacris</p>
+<hr/>
+</section>
+
+<section id="slideshow">
+<h2>Slideshow of Two Songs:</h2>
+<div class="slideshow-container">
+
+<div class="mySlides fade">
+  <div class="numbertext">1 / 2</div>
+  <img src="images/fatjoe.jpeg" style="width:100%">
+  <div class="text">What's Luv? By Fat Joe, Ja-Rule, and Ashanti</div>
+</div>
+
+<div class="mySlides fade">
+  <div class="numbertext">2 / 2</div>
+  <img src="images/kendrick.jpeg" style="width:100%">
+  <div class="text">Pride By Kendrick Lamar</div>
+</div>
+
+<a class="prev" onclick="plusSlides(-1)">❮</a>
+<a class="next" onclick="plusSlides(1)">❯</a>
+
+</div>
+<br>
+
+<div style="text-align:center">
+  <span class="dot" onclick="currentSlide(1)"></span> 
+  <span class="dot" onclick="currentSlide(2)"></span> 
+</div>
+<hr/>
+</section>
+
+
+</article>
+
+<footer>
+<p> This page was created by Anika &copy; 2023</p>
+</footer>
+
+</div>
+
+<script>
+let slideIndex = 1;
+showSlides(slideIndex);
+
+function plusSlides(n) {
+  showSlides(slideIndex += n);
+}
+
+function currentSlide(n) {
+  showSlides(slideIndex = n);
+}
+
+function showSlides(n) {
+  let i;
+  let slides = document.getElementsByClassName("mySlides");
+  let dots = document.getElementsByClassName("dot");
+  if (n > slides.length) {slideIndex = 1}    
+  if (n < 1) {slideIndex = slides.length}
+  for (i = 0; i < slides.length; i++) {
+    slides[i].style.display = "none";  
+  }
+  for (i = 0; i < dots.length; i++) {
+    dots[i].className = dots[i].className.replace(" active", "");
+  }
+  slides[slideIndex-1].style.display = "block";  
+  dots[slideIndex-1].className += " active";
+}
+</script>
+
+
+
+</body>
+</html>
